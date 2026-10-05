@@ -1,0 +1,510 @@
+/* =========================================================
+   SHOPPN - MAIN STYLESHEET
+   Colors:
+   Orange  #EB4511
+   White   #FEFDFF
+   Yellow  #FFCA3A
+   ========================================================= */
+
+/* ---------- GENERAL ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FEFDFF;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    background-color: #EB4511;
+    color: #FEFDFF;
+    padding: 15px 5%;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+header a {
+    color: #FEFDFF;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #FFCA3A;
+}
+
+/* ---------- LOGO ---------- */
+
+.logo {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* ---------- SEARCH ---------- */
+
+.search-form {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0 15px;
+}
+
+.search-form input {
+    width: 300px;
+    max-width: 100%;
+    padding: 11px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.search-form button {
+    background-color: #FFCA3A;
+    color: #333333;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #FEFDFF;
+    transform: translateY(-2px);
+}
+
+/* ---------- NAVIGATION ---------- */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 8px 13px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #FFCA3A;
+    color: #333333;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ---------- HEADINGS ---------- */
+
+h1,
+h2,
+h3 {
+    color: #EB4511;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+/* ---------- HERO SECTION ---------- */
+
+.hero {
+    background: linear-gradient(135deg, #EB4511, #FFCA3A);
+    color: #FEFDFF;
+    padding: 60px 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.hero h1 {
+    color: #FEFDFF;
+    font-size: 45px;
+}
+
+.hero p {
+    font-size: 19px;
+}
+
+/* ---------- BUTTONS ---------- */
+
+button,
+.btn {
+    display: inline-block;
+    background-color: #EB4511;
+    color: #FEFDFF;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    background-color: #FFCA3A;
+    color: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary button */
+
+.btn-secondary {
+    background-color: #FFCA3A;
+    color: #333333;
+}
+
+.btn-secondary:hover {
+    background-color: #EB4511;
+    color: #FEFDFF;
+}
+
+/* ---------- FORMS ---------- */
+
+form {
+    background-color: #FEFDFF;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin: 12px 0 5px;
+    color: #333333;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 11px;
+    border: 2px solid #dddddd;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #FEFDFF;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #EB4511;
+    box-shadow: 0 0 0 3px rgba(255, 202, 58, 0.35);
+}
+
+/* ---------- TABLES ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #FEFDFF;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+table th {
+    background-color: #EB4511;
+    color: #FEFDFF;
+    padding: 13px;
+    text-align: left;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+table tr:hover {
+    background-color: #fff6d9;
+}
+
+table a {
+    color: #EB4511;
+    font-weight: bold;
+}
+
+table a:hover {
+    color: #333333;
+}
+
+/* ---------- PRODUCT GRID ---------- */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: #FEFDFF;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-card-content {
+    padding: 18px;
+}
+
+.product-card h3 {
+    margin-top: 0;
+}
+
+.product-price {
+    color: #EB4511;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.product-category {
+    display: inline-block;
+    background-color: #FFCA3A;
+    color: #333333;
+    padding: 4px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+/* ---------- ALERT MESSAGES ---------- */
+
+.success,
+.alert-success {
+    background-color: #e7f7e7;
+    color: #216b21;
+    border-left: 5px solid #2e8b2e;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.error,
+.alert-error {
+    background-color: #ffe8e4;
+    color: #a52a1a;
+    border-left: 5px solid #EB4511;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+/* ---------- ADMIN ---------- */
+
+.admin-panel {
+    background-color: #FEFDFF;
+    border-top: 6px solid #EB4511;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.admin-nav a {
+    background-color: #FFCA3A;
+    color: #333333;
+    padding: 9px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.admin-nav a:hover {
+    background-color: #EB4511;
+    color: #FEFDFF;
+}
+
+/* ---------- CART ---------- */
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    margin-bottom: 12px;
+    background-color: #FEFDFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 24px;
+    color: #EB4511;
+    font-weight: bold;
+}
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    background-color: #EB4511;
+    color: #FEFDFF;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #FFCA3A;
+    text-decoration: none;
+}
+
+/* ---------- IMAGES ---------- */
+
+img {
+    max-width: 100%;
+}
+
+.promotion-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* ---------- LINKS ---------- */
+
+a {
+    color: #EB4511;
+}
+
+a:hover {
+    color: #333333;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav a {
+        width: 100%;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form input {
+        width: 100%;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* ---------- SIMPLE ANIMATION ---------- */
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

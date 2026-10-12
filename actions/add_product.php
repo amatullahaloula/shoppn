@@ -91,7 +91,7 @@ if (
     !mkdir($uploadDirectory, 0755, true)
 ) {
     $_SESSION['error'] = 'Could not create the product image folder.';
-    redirect('../views/admin/product.php');
+    redirect('views/admin/product.php');
     exit;
 }
 
@@ -101,7 +101,7 @@ $destination = $uploadDirectory . $filename;
 
 if (!move_uploaded_file($image['tmp_name'], $destination)) {
     $_SESSION['error'] = 'Image upload failed. Please try again.';
-    redirect('../views/admin/product.php');
+    redirect('views/admin/product.php');
     exit;
 }
 

@@ -1,3 +1,4 @@
+
 <?php
 
 require_once __DIR__ . '/../classes/ProductClass.php';
@@ -10,7 +11,6 @@ class ProductController
     {
         $this->productModel = new ProductClass();
     }
-
 
     // =========================
     // BRANDS
@@ -36,7 +36,6 @@ class ProductController
         return $this->productModel->updateBrand($id, $name);
     }
 
-
     // =========================
     // CATEGORIES
     // =========================
@@ -59,6 +58,67 @@ class ProductController
     public function updateCategory($id, $name)
     {
         return $this->productModel->updateCategory($id, $name);
+    }
+
+    // =========================
+    // PRODUCTS
+    // =========================
+
+    public function addProduct(
+        $cat,
+        $brand,
+        $title,
+        $price,
+        $desc,
+        $image_filename,
+        $keywords
+    ) {
+        return $this->productModel->addProduct(
+            $cat,
+            $brand,
+            $title,
+            $price,
+            $desc,
+            $image_filename,
+            $keywords
+        );
+    }
+
+    public function updateProduct(
+        $id,
+        $cat,
+        $brand,
+        $title,
+        $price,
+        $desc,
+        $image_filename,
+        $keywords
+    ) {
+        return $this->productModel->updateProduct(
+            $id,
+            $cat,
+            $brand,
+            $title,
+            $price,
+            $desc,
+            $image_filename,
+            $keywords
+        );
+    }
+
+    public function getProductById($id)
+    {
+        return $this->productModel->getProductById($id);
+    }
+
+    public function getAllProducts($search = '')
+    {
+        return $this->productModel->getAllProducts($search);
+    }
+
+    public function searchProducts($search)
+    {
+        return $this->productModel->searchProducts($search);
     }
 }
 

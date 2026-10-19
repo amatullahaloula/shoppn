@@ -28,13 +28,16 @@ require_once __DIR__ . '/layout/header.php';
 
         <p>Your shopping cart is empty.</p>
 
-        <a href="<?= BASE_URL ?>/index.php">
+        <a
+            href="<?= BASE_URL ?>/index.php"
+            style="display:inline-block; background-color:#EB4511; color:#FEFDFF; padding:12px 22px; border:2px solid #EB4511; border-radius:6px; text-decoration:none; font-size:15px; font-weight:bold;"
+        >
             Continue Shopping
         </a>
 
     <?php } else { ?>
 
-        <!-- REMOVE FORM: handles product removal only -->
+        <!-- REMOVE FORM -->
         <form
             method="POST"
             action="<?= BASE_URL ?>/actions/remove_from_cart_action.php"
@@ -96,9 +99,7 @@ require_once __DIR__ . '/layout/header.php';
 
                                 </td>
 
-                                <td>
-                                    <?= $qty ?>
-                                </td>
+                                <td><?= $qty ?></td>
 
                                 <td>
                                     $<?= number_format($price, 2) ?>
@@ -131,7 +132,7 @@ require_once __DIR__ . '/layout/header.php';
 
         </form>
 
-        <!-- UPDATE FORM: handles quantity updates only -->
+        <!-- UPDATE QUANTITY FORM -->
         <form
             method="POST"
             action="<?= BASE_URL ?>/actions/update_qty_action.php"
@@ -201,14 +202,28 @@ require_once __DIR__ . '/layout/header.php';
 
         </form>
 
-        <div class="cart-actions">
+        <!-- CART NAVIGATION BUTTONS -->
+        <div
+            class="cart-actions"
+            style="display:flex; flex-wrap:wrap; gap:12px; margin:25px 0;"
+        >
 
-            <a href="<?= BASE_URL ?>/index.php">
+            <a
+                href="<?= BASE_URL ?>/index.php"
+                style="display:inline-block; background-color:#EB4511; color:#FEFDFF; padding:12px 22px; border:2px solid #EB4511; border-radius:6px; text-decoration:none; font-size:15px; font-weight:bold;"
+                onmouseover="this.style.backgroundColor='#FFCA3A'; this.style.color='#333333'; this.style.borderColor='#FFCA3A';"
+                onmouseout="this.style.backgroundColor='#EB4511'; this.style.color='#FEFDFF'; this.style.borderColor='#EB4511';"
+            >
                 Continue Shopping
             </a>
 
-            <a href="<?= BASE_URL ?>/views/checkout.php">
-                Checkout
+            <a
+                href="<?= BASE_URL ?>/views/checkout.php"
+                style="display:inline-block; background-color:#EB4511; color:#FEFDFF; padding:12px 22px; border:2px solid #EB4511; border-radius:6px; text-decoration:none; font-size:15px; font-weight:bold;"
+                onmouseover="this.style.backgroundColor='#FFCA3A'; this.style.color='#333333'; this.style.borderColor='#FFCA3A';"
+                onmouseout="this.style.backgroundColor='#EB4511'; this.style.color='#FEFDFF'; this.style.borderColor='#EB4511';"
+            >
+                Proceed to Checkout
             </a>
 
         </div>

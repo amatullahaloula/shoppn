@@ -508,3 +508,49 @@ a:hover {
         transform: translateY(0);
     }
 }
+
+
+/* ---------- CART PAGE BUTTONS ---------- */
+
+.cart-page .cart-actions {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.cart-page .cart-actions a,
+.cart-page > a {
+    display: inline-block !important;
+    background: #EB4511 !important;
+    color: #FEFDFF !important;
+    padding: 12px 22px !important;
+    border: 2px solid #EB4511 !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cart-page .cart-actions a:hover,
+.cart-page > a:hover {
+    background: #FFCA3A !important;
+    color: #333333 !important;
+    border-color: #FFCA3A !important;
+}
+
+@media (max-width: 600px) {
+    .cart-page .cart-actions {
+        flex-direction: column;
+    }
+
+    .cart-page .cart-actions a,
+    .cart-page > a {
+        width: 100%;
+    }
+}
+
+

@@ -99,6 +99,15 @@ $filename = uniqid('product_', true) . '.' . $allowedTypes[$mimeType];
 $destination = $uploadDirectory . $filename;
 
 if (!move_uploaded_file($image['tmp_name'], $destination)) {
+    error_log(
+        'Product image upload failed. ' .
+        'Temporary file exists: ' . (file_exists($image['tmp_name']) ? 'yes' : 'no') .
+        '; temporary file readable: ' . (is_readable($image['tmp_name']) ? 'yes' : 'no') .
+        '; destination directory writable: ' . (is_writable(dirname($destination)) ? 'yes' : 'no') .
+        '; PHP upload error: ' . ($image['error'] ?? 'unknown') .
+        '; destination: ' . $destination
+    );
+
     $_SESSION['error'] = 'Image upload failed. Please try again.';
     redirect('views/admin/product.php');
     exit;

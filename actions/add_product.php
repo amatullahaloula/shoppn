@@ -1,4 +1,3 @@
-```php
 <?php
 
 require_once __DIR__ . '/../core/core.php';
@@ -133,4 +132,3 @@ redirect('views/admin/product.php');
 exit;
 
 ?>
-```

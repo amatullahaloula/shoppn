@@ -1,0 +1,7 @@
+
+<?php
+define('PAYSTACK_PUBLIC_KEY', 'pk_test_af834ed588fc74336655efa84a499f0b7d7a79a9');
+define('PAYSTACK_SECRET_KEY', 'sk_test_2d79f1987c75649b4df3e5613c31b023459b8084');
+define('USD_TO_GHS_RATE', 11.74);
+define('PAYSTACK_CURRENCY', 'GHS');
+?>

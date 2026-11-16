@@ -1,43 +1,43 @@
 
 <?php
-
 require_once __DIR__ . '/../core/core.php';
 require_once __DIR__ . '/../controllers/CartController.php';
 
-// Only allow POST requests.
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: ' . BASE_URL . '/views/cart.php');
     exit;
 }
 
-// Get and validate the product ID.
-$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
-
-if (!$product_id || $product_id < 1) {
-    $_SESSION['error'] = 'Please select a valid product to remove.';
-    header('Location: ' . BASE_URL . '/views/cart.php');
-    exit;
-}
-
-// Identify the visitor's cart.
 $ip = get_ip();
+$customer_id = isset($_SESSION['customer_id'])
+    ? (int) $_SESSION['customer_id']
+    : null;
 
-if (empty($ip)) {
-    $_SESSION['error'] = 'Unable to identify your cart. Please try again.';
+$products = $_POST['remove'] ?? [];
+
+if (!is_array($products) || empty($products)) {
+    $_SESSION['error'] = 'Please select at least one product to remove.';
     header('Location: ' . BASE_URL . '/views/cart.php');
     exit;
 }
 
-// Remove the product through the controller.
 $cartController = new CartController();
-$success = $cartController->removeFromCart($product_id, $ip);
+$removed = 0;
 
-if ($success) {
-    $_SESSION['success'] = 'Product removed from your cart.';
-} else {
-    $_SESSION['error'] = 'Could not remove the product. Please try again.';
+foreach ($products as $value) {
+    $product_id = filter_var($value, FILTER_VALIDATE_INT);
+
+    if ($product_id && $product_id > 0 &&
+        $cartController->removeFromCart($product_id, $ip, $customer_id)) {
+        $removed++;
+    }
 }
 
-// Return to the cart page.
+if ($removed > 0) {
+    $_SESSION['success'] = $removed . ' product(s) removed from your cart.';
+} else {
+    $_SESSION['error'] = 'Could not remove the selected products.';
+}
+
 header('Location: ' . BASE_URL . '/views/cart.php');
 exit;
